@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    /* hey! are you looking through my HTML? why? you want to kiss me or something? like ok... but only because you brought it up*/
+
+    <title>GET THE CAT A SCRATCHING POST</title>
+
+    <meta
+        name="description"
+        content="GET THE CAT A SCRATCHING POST is a free game and project about social media addiction, connection, third spaces, and learning how to exist outside of a screen."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "handberger";
+            src: url("fonts/handberger.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "handberger", sans-serif;
+            letter-spacing: 0.08em;
+            background:
+                radial-gradient(circle at 20% 10%, #fff7c9 0 8%, transparent 9%),
+                radial-gradient(circle at 80% 25%, #dff7ff 0 9%, transparent 10%),
+                #fffdf4;
+            color: #181818;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            width: min(920px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        /* I NEED A HERO TO SAVE ME NOW. I NEED A HERO (to save me now) */
+
+        .hero {
+            text-align: center;
+            padding: 48px 0 28px;
+        }
+
+        .wordart {
+            margin: 0;
+            font-family: "handberger", sans-serif;
+            font-size: clamp(3rem, 11vw, 7.5rem);
+            line-height: 0.9;
+            letter-spacing: -0.06em;
+            text-transform: uppercase;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffeb00 0%,
+                    #ff9900 25%,
+                    #ff1d1d 48%,
+                    #d000ff 70%,
+                    #224cff 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            -webkit-text-stroke: 3px #111;
+
+            filter:
+                drop-shadow(6px 6px 0 #00e5ff)
+                drop-shadow(11px 11px 0 #ff00aa);
+
+            transform: rotate(-1deg);
+        }
+
+        .subtitle {
+            margin-top: 20px;
+            font-size: clamp(1.15rem, 3vw, 1.5rem);
+            font-weight: 700;
+        }
+
+        .cat {
+            display: block;
+            width: min(300px, 72vw);
+            margin: 28px auto 8px;
+        }
+
+        .cat-placeholder {
+            display: grid;
+            place-items: center;
+            width: min(300px, 72vw);
+            aspect-ratio: 1 / 1;
+            margin: 28px auto 8px;
+
+            border: 5px dashed #d60000;
+            border-radius: 36% 36% 48% 48%;
+
+            color: #d60000;
+            font-family: "handberger", sans-serif;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 28px;
+            transform: rotate(2deg);
+        }
+
+        .titleart{
+            max-width: 760px;
+        }
+
+        .catimage{
+            max-width: 400px;
+        }
+
+
+
+        /* ----------------------------- */
+        /* INTRO                         */
+        /* ----------------------------- */
+
+        .intro {
+            max-width: 760px;
+            margin: 24px auto 56px;
+            font-size: 1.08rem;
+        }
+
+        .intro strong {
+            font-weight: 800;
+        }
+
+        /* ----------------------------- */
+        /* MAIN ACTION SECTIONS          */
+        /* ----------------------------- */
+
+        .action-section {
+            margin: 42px 0;
+            padding: 34px;
+            border: 4px solid #111;
+            background: white;
+            box-shadow: 10px 10px 0 #111;
+        }
+
+        .action-section:nth-of-type(odd) {
+            transform: rotate(-0.35deg);
+        }
+
+        .action-section:nth-of-type(even) {
+            transform: rotate(0.35deg);
+        }
+
+        .section-title {
+            margin: 0 0 12px;
+            font-family: "handberger", sans-serif;
+            font-size: clamp(2rem, 7vw, 4rem);
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .section-copy {
+            max-width: 700px;
+            margin: 0 auto 24px;
+            font-size: 1.08rem;
+        }
+
+        /* ----------------------------- */
+        /* BUTTONS                       */
+        /* ----------------------------- */
+
+        .button {
+            display: inline-block;
+            padding: 18px 26px;
+
+            border: 4px solid #111;
+            border-radius: 4px;
+
+            background: #ffef00;
+            box-shadow: 7px 7px 0 #111;
+
+            font-family: "handberger", sans-serif;
+            font-size: clamp(1.15rem, 4vw, 1.6rem);
+            line-height: 1.1;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            transition:
+                transform 0.08s ease,
+                box-shadow 0.08s ease;
+        }
+
+        .button:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 4px 4px 0 #111;
+        }
+
+        .button:active {
+            transform: translate(7px, 7px);
+            box-shadow: none;
+        }
+
+        .button.red {
+            background: #ef2b2d;
+            color: white;
+        }
+
+        .button.blue {
+            background: #42c7ff;
+        }
+
+        .button.green {
+            background: #7ee56c;
+        }
+
+        .button.pink {
+            background: #ff8ed7;
+        }
+
+        /* ----------------------------- */
+        /* GAME SECTION                  */
+        /* ----------------------------- */
+
+        .game-meta {
+            margin: 16px 0 22px;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .email-box {
+            margin: 26px auto 0;
+            padding-top: 24px;
+            max-width: 620px;
+            border-top: 2px dashed #555;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .email-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 14px 16px;
+            border: 3px solid #111;
+            font: inherit;
+            font-size: 1rem;
+            background: #fff;
+        }
+
+        .email-form button {
+            padding: 14px 18px;
+            border: 3px solid #111;
+            background: #ffef00;
+            box-shadow: 4px 4px 0 #111;
+            font-family: "handberger", sans-serif;
+            cursor: pointer;
+        }
+
+        .form-note {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* ----------------------------- */
+        /* SUPPORT                       */
+        /* ----------------------------- */
+
+        .support {
+            margin: 70px 0 80px;
+            padding: 36px;
+            border-top: 7px double #111;
+            border-bottom: 7px double #111;
+        }
+
+        .support h2 {
+            font-family: "handberger", sans-serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 30px 0;
+        }
+
+        .support-card {
+            padding: 20px;
+            border: 3px solid #111;
+            background: white;
+            text-align: center;
+        }
+
+        .support-card h3 {
+            margin-top: 0;
+            font-family: "handberger", sans-serif;
+            font-size: 1.35rem;
+        }
+
+        .support-card p {
+            min-height: 72px;
+        }
+
+        /* ----------------------------- */
+        /* FOOTER                        */
+        /* ----------------------------- */
+
+        footer {
+            text-align: center;
+            padding: 0 0 60px;
+            font-size: 0.9rem;
+        }
+
+        .tiny-cat {
+            color: #d60000;
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        /* ----------------------------- */
+        /* MOBILE                        */
+        /* ----------------------------- */
+
+        @media (max-width: 700px) {
+            .page {
+                width: min(100% - 22px, 920px);
+            }
+
+            .hero {
+                padding-top: 30px;
+            }
+
+            .wordart {
+                -webkit-text-stroke: 2px #111;
+                filter:
+                    drop-shadow(4px 4px 0 #00e5ff)
+                    drop-shadow(7px 7px 0 #ff00aa);
+            }
+
+            .action-section {
+                padding: 26px 18px;
+                box-shadow: 6px 6px 0 #111;
+            }
+
+            .button {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form button {
+                min-height: 50px;
+            }
+
+            .support {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-card p {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="hero">
+
+            <img
+                    class="titleart"
+                    src="images/title.png"
+                    alt="word art that says get the cat a scratching post: how i stopped scrolling"
+                >
+
+            <div>
+                <img
+                    class="catimage"
+                    src="images/cat.png"
+                    alt="word art that says get the cat a scratching post: how i stopped scrolling"
+                >
+            </div>
+
+        </header>
+
+
+        <section class="intro">
+
+            <p>
+                <strong>GET THE CAT A SCRATCHING POST</strong> is about the idea that one can't solve social media addiction without finding out what itches they're scratching by being on social media and finding replacements. It's about realizing how much of centralized algorithmic social media is owned by the richest people in the world and finding ways to cut back without losing out connection with each other. It's about learning to exist outside of a screen when you never learned how, in a world that has made it increasingly more difficult to be offline. It's about meeting in safe, accessible, and free third spaces and advocating for more of them.
+            </p>
+
+            <p>
+                I'm Blochberger (they/them), and I am a game developer. I'm sharing my story about how growing up "terminally online" led to low self-esteem and made my anxiety disorder worse. I'm not here to wag my finger at people using social media and enjoy it, but extend a hand to those of us who don't enjoy it but keep finding ourselves there anyway.
+            </p>
+
+        </section>
+
+
+        <!-- PLAY -->
+
+        <section class="action-section" id="play">
+
+            <h2 class="section-title">Play the Game</h2>
+
+            <p>
+                <a
+                    class="button red"
+                    href="YOUR-ITCH-IO-LINK-HERE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Play the Game
+                </a>
+            </p>
+
+            <div class="game-meta">
+                FREE for Windows / PC
+            </div>
+
+
+            <div class="email-box">
+
+                <strong>On your phone right now?</strong>
+
+                <p>
+                    Send yourself the download link and play later on your computer.
+                </p>
+
+                <!--
+                    IMPORTANT:
+                    This form does not actually send email yet.
+
+                    You can later connect it to:
+                    - Formspree
+                    - Buttondown
+                    - Mailchimp
+                    - your own server
+                    - another email/form service
+                -->
+
+                <form class="email-form" onsubmit="handleEmail(event)">
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                        aria-label="Email address"
+                    >
+
+                    <button type="submit">
+                        SEND IT
+                    </button>
+
+                </form>
+
+                <div class="form-note" id="form-message">
+                    No spam. Just the game link.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESOURCES -->
+
+        <a
+                class="button blue"
+                href="YOUR-RESOURCES-LINK-HERE"
+        >
+
+            <h2 class="section-title">Get Some Resources</h2>
+
+            <p class="section-copy">
+                Activities, research, tools, and other resources for people who
+                want to change their relationship with social media.
+            </p>
+
+        </a>
+
+
+
+        <!-- OFFLINE -->
+
+        <section class="action-section" id="offline">
+
+            <h2 class="section-title">Go Do Something</h2>
+
+            <p class="section-copy">
+                The internet scratches real itches: connection, entertainment,
+                creativity, belonging, curiosity, stimulation. It also exposes you constantly to the Horrors.
+            </p>
+
+            <p class="section-copy">
+                So what else can scratch them?
+            </p>
+
+            <p class="section-copy">
+                Find things to do, places to go, people to meet, and ways to
+                spend some time outside of algorithmic feeds.
+            </p>
+
+            <a
+                class="button green"
+                href="YOUR-OFFLINE-ACTIVITIES-LINK-HERE"
+            >
+                Find Something to Do Offline
+            </a>
+
+        </section>
+
+
+        <!-- OPTIONAL FUTURE MEETUP SECTION
+
+        <section class="action-section" id="meetup">
+
+            <h2 class="section-title">Meet Up Offline</h2>
+
+            <p class="section-copy">
+                No Discord server. No livestream. No algorithm.
+            </p>
+
+            <p class="section-copy">
+                I'll be at [PUBLIC PARK] on [DATE] from [TIME].
+                Bring a book, cards, a craft, a frisbee, or just yourself.
+            </p>
+
+            <a
+                class="button pink"
+                href="YOUR-MEETUP-INFO-LINK"
+            >
+                See the Next Meetup
+            </a>
+
+        </section>
+
+        -->
+
+
+        <!-- SUPPORT -->
+
+        <section class="support" id="support">
+
+            <h2>Support the Project</h2>
+
+            <p>
+                <strong>GET THE CAT A SCRATCHING POST is free.</strong>
+            </p>
+
+            <p>
+                If you'd like to support a project where we're trying to figure
+                out how to exist online
+                <strong>without having to exist online all the time</strong>,
+                there are a few ways you can help.
+            </p>
+
+
+            <div class="support-grid">
+
+                <article class="support-card">
+
+                    <h3>Donate</h3>
+
+                    <p>
+                        Support the game directly through itch.io.
+                    </p>
+
+                    <a
+                        class="button red"
+                        href="YOUR-ITCH-IO-LINK-HERE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Donate on itch.io
+                    </a>
+
+                </article>
+
+
+                <article class="support-card">
+
+                    <h3>Buy Me a Coffee</h3>
+
+                    <p>
+                        Leave a small tip if the project meant something to you.
+                    </p>
+
+                    <a
+                        class="button pink"
+                        href="YOUR-KOFI-LINK-HERE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ko-fi
+                    </a>
+
+                </article>
+
+
+                <article class="support-card">
+
+                    <h3>Give Me a Job</h3>
+
+                    <p>
+                        I'm a game developer available for freelance Unity work.
+                    </p>
+
+                    <a
+                        class="button blue"
+                        href="YOUR-FIVERR-LINK-HERE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Hire Me
+                    </a>
+
+                </article>
+
+            </div>
+
+
+            <p>
+                No donation is expected. Playing the game, sharing it with
+                someone, or spending an afternoon doing something that makes you
+                forget to check your phone is support too.
+            </p>
+
+        </section>
+
+
+        <footer>
+
+            <div>
+                <img
+                    class="heckai"
+                    src="images/heckai.png"
+                    alt="handwritten thing that says heck ai art and music. with another drawing of Landline. everything is nuanced. it is hard to say heck ai altogether when there are good things these tools do for accessibility. like improved screen readers. hello if you are using one right now. I would like to note the things I'm saying right now are not on the image being described."
+                >
+            </div>
+
+            <div>
+                GET THE CAT A SCRATCHING POST · [YEAR]
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script>
+        function handleEmail(event) {
+            event.preventDefault();
+
+            const emailInput = document.getElementById("email");
+            const message = document.getElementById("form-message");
+
+            /*
+                Placeholder behaviour.
+
+                This does NOT actually email the user yet.
+
+                Replace this function later with Formspree,
+                Buttondown, your own API, etc.
+            */
+
+            message.textContent =
+                "Email sending isn't connected yet — but this is where it will go.";
+
+            emailInput.value = "";
+        }
+    </script>
+
+</body>
+</html>
