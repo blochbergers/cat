@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    /* hey! are you looking through my HTML? why? you want to kiss me or something? like ok... but only because you brought it up*/
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 
     <title>GET THE CAT A SCRATCHING POST</title>
 
@@ -14,6 +12,8 @@
     >
 
     <style>
+        /* hey! are you looking through my HTML? why? you want to kiss me or something? like ok... but only because you brought it up*/
+
         * {
             box-sizing: border-box;
         }
@@ -21,7 +21,7 @@
         @font-face {
             font-family: "handberger";
             src: url("fonts/handberger.ttf") format("truetype");
-            font-weight: normal;
+            font-weight: bolder;
             font-style: normal;
         }
 
@@ -123,6 +123,14 @@
         }
 
         .catimage{
+            max-width: 400px;
+        }
+
+        .heckai{
+            max-width: 400px;
+        }
+
+        .blochberger{
             max-width: 400px;
         }
 
@@ -415,11 +423,11 @@
         <section class="intro">
 
             <p>
-                <strong>GET THE CAT A SCRATCHING POST</strong> is about the idea that one can't solve social media addiction without finding out what itches they're scratching by being on social media and finding replacements. It's about realizing how much of centralized algorithmic social media is owned by the richest people in the world and finding ways to cut back without losing out connection with each other. It's about learning to exist outside of a screen when you never learned how, in a world that has made it increasingly more difficult to be offline. It's about meeting in safe, accessible, and free third spaces and advocating for more of them.
+                <strong>GET THE CAT A SCRATCHING POST is about the idea that one can't solve social media addiction without finding out what itches they're scratching by being on social media and finding replacements. It's about realizing how much of centralized algorithmic social media is owned by the richest people in the world and finding ways to cut back without losing our connection with each other. It's about learning to exist outside of a screen when you never learned how, in a world that has made it increasingly more difficult to be offline. It's about meeting in safe, accessible, and free third spaces to build community solidarity, and advocating for more third spaces.</strong>
             </p>
 
             <p>
-                I'm Blochberger (they/them), and I am a game developer. I'm sharing my story about how growing up "terminally online" led to low self-esteem and made my anxiety disorder worse. I'm not here to wag my finger at people using social media and enjoy it, but extend a hand to those of us who don't enjoy it but keep finding ourselves there anyway.
+                <strong>I'm Blochberger (they/them), and I am a game developer. I'm sharing my story about how growing up "terminally online" led to low self-esteem and made my anxiety disorder worse. I'm not here to wag my finger at people using social media and enjoy it, but extend a hand to those of us who don't enjoy it but keep finding ourselves there anyway.</strong>
             </p>
 
         </section>
@@ -434,7 +442,7 @@
             <p>
                 <a
                     class="button red"
-                    href="YOUR-ITCH-IO-LINK-HERE"
+                    href="https://blochbergerspecials.itch.io/get-the-cat-a-scratching-post"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -455,33 +463,7 @@
                     Send yourself the download link and play later on your computer.
                 </p>
 
-                <!--
-                    IMPORTANT:
-                    This form does not actually send email yet.
-
-                    You can later connect it to:
-                    - Formspree
-                    - Buttondown
-                    - Mailchimp
-                    - your own server
-                    - another email/form service
-                -->
-
-                <form class="email-form" onsubmit="handleEmail(event)">
-
-                    <input
-                        id="email"
-                        type="email"
-                        placeholder="you@example.com"
-                        required
-                        aria-label="Email address"
-                    >
-
-                    <button type="submit">
-                        SEND IT
-                    </button>
-
-                </form>
+                <button class="button blue" onclick="shareProject()">REMIND ME LATER</button>
 
                 <div class="form-note" id="form-message">
                     No spam. Just the game link.
@@ -491,51 +473,44 @@
 
         </section>
 
+        <section class="action-section" id="read">
 
-        <!-- RESOURCES -->
+            <h2 class="section-title">Read the Story</h2>
 
-        <a
-                class="button blue"
-                href="YOUR-RESOURCES-LINK-HERE"
-        >
-
-            <h2 class="section-title">Get Some Resources</h2>
-
-            <p class="section-copy">
-                Activities, research, tools, and other resources for people who
-                want to change their relationship with social media.
+            <p>
+                <a
+                    class="button red"
+                    href="files/gtcasp.pdf"
+                    download
+                >
+                    Download the PDF
+                </a>
             </p>
 
-        </a>
+            <div class="game-meta">
+                FREE PDF
+            </div>
 
+            <div class="email-box">
 
+                <strong>Want to read it in your browser?</strong>
 
-        <!-- OFFLINE -->
+                <p>
+                    <strong>Open the story now without downloading it.</strong>
+                </p>
 
-        <section class="action-section" id="offline">
+                <a
+                    class="button blue"
+                    href="files/gtcasp.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    READ THE STORY
+                </a>
 
-            <h2 class="section-title">Go Do Something</h2>
+            </div>
 
-            <p class="section-copy">
-                The internet scratches real itches: connection, entertainment,
-                creativity, belonging, curiosity, stimulation. It also exposes you constantly to the Horrors.
-            </p>
-
-            <p class="section-copy">
-                So what else can scratch them?
-            </p>
-
-            <p class="section-copy">
-                Find things to do, places to go, people to meet, and ways to
-                spend some time outside of algorithmic feeds.
-            </p>
-
-            <a
-                class="button green"
-                href="YOUR-OFFLINE-ACTIVITIES-LINK-HERE"
-            >
-                Find Something to Do Offline
-            </a>
+        </section>
 
         </section>
 
@@ -547,7 +522,7 @@
             <h2 class="section-title">Meet Up Offline</h2>
 
             <p class="section-copy">
-                No Discord server. No livestream. No algorithm.
+                
             </p>
 
             <p class="section-copy">
@@ -578,10 +553,9 @@
             </p>
 
             <p>
-                If you'd like to support a project where we're trying to figure
-                out how to exist online
-                <strong>without having to exist online all the time</strong>,
-                there are a few ways you can help.
+                <strong>If you'd like to support a project where we're trying to figure
+                out how to exist offline when we never learned how,
+                there are a few ways you can help.</strong>
             </p>
 
 
@@ -589,19 +563,19 @@
 
                 <article class="support-card">
 
-                    <h3>Donate</h3>
+                    <h3>Share the Game</h3>
 
                     <p>
-                        Support the game directly through itch.io.
+                        <strong>Support the game directly through itch.io.</strong>
                     </p>
 
                     <a
                         class="button red"
-                        href="YOUR-ITCH-IO-LINK-HERE"
+                        href="https://blochbergerspecials.itch.io/get-the-cat-a-scratching-post"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Donate on itch.io
+                        itch.io
                     </a>
 
                 </article>
@@ -612,12 +586,12 @@
                     <h3>Buy Me a Coffee</h3>
 
                     <p>
-                        Leave a small tip if the project meant something to you.
+                        <strong>Or help a queer person pay their Permanent Residency application fees. Which costs like 318 coffees.</strong>
                     </p>
 
                     <a
                         class="button pink"
-                        href="YOUR-KOFI-LINK-HERE"
+                        href="https://ko-fi.com/blochberger/goal?g=0"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -632,12 +606,12 @@
                     <h3>Give Me a Job</h3>
 
                     <p>
-                        I'm a game developer available for freelance Unity work.
+                        <strong>I'm a game developer available for freelance Unity work.</strong>
                     </p>
 
                     <a
                         class="button blue"
-                        href="YOUR-FIVERR-LINK-HERE"
+                        href="https://www.fiverr.com/blaise_hanel?public_mode=true"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -646,13 +620,67 @@
 
                 </article>
 
+                <article class="support-card">
+
+                    <h3>Contact Me</h3>
+
+                    <p>
+                        <strong>Feedback, personal stories of breaking phone addiction, resources, cat fanart, or artists interested in contributing to this project are all welcome!</strong>
+                    </p>
+
+                    <a
+                        class="button pink"
+                        href="mailto:blochbergerspecials@proton.me"
+                    >
+                        Email Me
+                    </a>
+
+                </article>
+
+                <article class="support-card">
+
+                    <h3>Donate to our community</h3>
+
+                    <p>
+                        <strong>If you're on this website, you are probably in Montreal. Consider donating to the food bank that has fed me.</strong>
+                    </p>
+
+                    <a
+                        class="button blue"
+                        href="https://www.mileendmission.org/donate/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Donate
+                    </a>
+
+                </article>
+
+                <article class="support-card">
+
+                    <h3>Check out this video</h3>
+
+                    <p>
+                        <strong>I think it has a lot of important things to say. It has a lot of things to say that helped me. It is rly important.</strong>
+                    </p>
+
+                    <a
+                        class="button red"
+                        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Video
+                    </a>
+
+                </article>
+
+
             </div>
 
 
             <p>
-                No donation is expected. Playing the game, sharing it with
-                someone, or spending an afternoon doing something that makes you
-                forget to check your phone is support too.
+                <strong>Just hanging out building connections in our community is support too. When we have a strong community, we all benefit.</strong>
             </p>
 
         </section>
@@ -666,39 +694,35 @@
                     src="images/heckai.png"
                     alt="handwritten thing that says heck ai art and music. with another drawing of Landline. everything is nuanced. it is hard to say heck ai altogether when there are good things these tools do for accessibility. like improved screen readers. hello if you are using one right now. I would like to note the things I'm saying right now are not on the image being described."
                 >
+                <img
+                    class="blochberger"
+                    src="images/blochberger.png"
+                    alt="block burger specials logo. it's the Montreal Expos logo with a sandwich in it and peanut butter and chocolate coloured"
+                >
             </div>
 
             <div>
-                GET THE CAT A SCRATCHING POST · [YEAR]
+                GET THE CAT A SCRATCHING POST 2026
             </div>
 
         </footer>
 
     </main>
 
-
-    <script>
-        function handleEmail(event) {
-            event.preventDefault();
-
-            const emailInput = document.getElementById("email");
-            const message = document.getElementById("form-message");
-
-            /*
-                Placeholder behaviour.
-
-                This does NOT actually email the user yet.
-
-                Replace this function later with Formspree,
-                Buttondown, your own API, etc.
-            */
-
-            message.textContent =
-                "Email sending isn't connected yet — but this is where it will go.";
-
-            emailInput.value = "";
-        }
-    </script>
+<script>
+async function shareProject() {
+    if (navigator.share) {
+        await navigator.share({
+            title: "GET THE CAT A SCRATCHING POST",
+            text: "Remember to check this out later:",
+            url: "https://blochbergerspecials.itch.io/get-the-cat-a-scratching-post"
+        });
+    } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert("Link copied!");
+    }
+}
+</script>
 
 </body>
 </html>
